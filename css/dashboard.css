@@ -1,0 +1,127 @@
+/*
+ * Base structure
+ */
+:root {
+  --main-bg-color: #3DDB93;
+  --main-txt-color: #404245;
+  --sidebard-bg-color: #4f4f4f;
+}
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 60px;
+  color: var(--main-txt-color);
+}
+
+/*
+ * Typography
+ */
+
+.navbar .nav-link {
+  color: var(--main-txt-color);
+}
+
+ .nav-link.active {
+  background-color: var(--main-bg-color) !important;
+}
+
+
+
+a {
+  color: var(--main-bg-color);
+}
+
+a:visited {
+  color: var(--main-bg-color);
+}
+
+.page-item.active .page-link {
+  background-color: var(--main-bg-color);
+  border-color: var(--main-bg-color);
+}
+
+
+@media (min-width: 768px){
+
+  .nav-bg {
+    background-color: #fff !important;
+  }
+
+  .card-block {
+    margin-bottom: .625em;
+  }
+  .card {
+    border: none;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  /*
+   * Sidebar
+   */
+  
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #eee;
+    margin-top: 10px !important;
+    background-color: var(--sidebard-bg-color);
+  }
+  
+  .sidebar .nav {
+    margin-bottom: 20px;
+  }
+  
+  .sidebar .nav-item {
+    width: 100%;
+  }
+  
+  .sidebar .nav-item + .nav-item {
+    margin-left: 0;
+  }
+  
+  .sidebar .nav-link {
+    border-radius: 0;
+  }
+
+  .sidebar .nav-link:hover {
+    color: #fff;
+  }
+  
+  /*
+   * Dashboard
+   */
+  
+   /* Placeholders */
+  .placeholders {
+    padding-bottom: 3rem;
+  }
+  
+  .placeholder img {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .card-block {
+    box-shadow: 0 0 20px #747474;
+    border-radius: 6px;
+  }
+  
+  .card-block i {
+    border: 1px solid #0275d8;
+    border-radius: 10%;
+    padding: 10px;
+    color: #0275d8;
+    margin-bottom: .75rem;
+  }  
+}

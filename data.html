@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aria's Schedule</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/dashboard.css">
+	</head>
+
+  <body>
+    <nav class="navbar navbar-toggleable-md fixed-top nav-bg">
+      <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Our Budget</a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Dashboard</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="data.html">Add Data  <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+						<a class="nav-link" href="#">
+						It's a beautiful 
+	          	<script>
+	          		var myDate = new Date();
+	          		var myDay = [
+	            				"Sunday", 
+	            				"Monday", 
+	            				"Tuesday", 
+	            				"Wednesday", 
+	            				"Thursday", 
+	            				"Friday", 
+	            				"Saturday"
+	          				];
+	          		document.write(myDay[myDate.getDay()] + "!");
+	          	</script>
+          	</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Dashboard <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="data.html">Add Data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Analytics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Export</a>
+            </li>
+          </ul>
+
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nav item</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nav item again</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">One more nav</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Another nav item</a>
+            </li>
+          </ul>
+
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nav item again</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">One more nav</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Another nav item</a>
+            </li>
+          </ul>
+        </nav>
+				
+				<!-- OVERVIEW -->
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item active">Add Data</li>
+          </ol>          
+          <h1><i class="fa fa-area-chart"></i> Data</h1>
+
+
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card text-center">
+      <div class="card-block">
+        <i class="fa fa-hourglass-1 fa-5x"></i>
+        <h3>Feedings</h3>
+        <p class="card-text">Total Feedings Today</p>
+        <a href="#" class="btn btn-outline-primary" data-toggle="modal" data-target="#feedModal">View Feedings</a>
+      </div>
+    </div>
+  </div>
+  <!-- feedModal -->
+<div class="modal fade" id="feedModal" tabindex="-1" role="dialog" aria-labelledby="feedModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="feedModalLabel">Total Feedings Today</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Feed Time</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">9/20/2017</th>
+              <td>10:37am</td> 
+              <td>Otto</td>
+            </tr>
+            <tr>
+              <th scope="row">9/20/2017</th>
+              <td>1:00pm</td>
+              <td>Thornton</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="col-sm-3">
+    <div class="card text-center">
+      <div class="card-block">
+        <i class="fa fa-hourglass-3 fa-5x"></i>
+        <h3>Ounces</h3>
+        <p class="card-text">Total Ounces Today</p>
+        <a href="#" class="btn btn-outline-primary">View Ounces</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card text-center">
+      <div class="card-block">
+        <i class="fa fa-bed fa-5x"></i>
+        <h3>Nap Times</h3>
+        <p class="card-text">Total Nap Time Today</p>
+        <a href="#" class="btn btn-outline-primary">View Naps</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card text-center">
+      <div class="card-block">
+        <i class="fa fa-bathtub  fa-5x"></i>
+        <h3>Diapers</h3>
+        <p class="card-text">Total Diapers Today</p>
+        <a href="#" class="btn btn-outline-primary">View Diapers</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!--          <section class="row text-center placeholders">
+            <div class="col-6 col-sm-3 placeholder">
+              <i class="fa fa-hourglass-1 fa-5x"></i><br><br>
+              <h4>Feedings</h4>
+              <span class="text-muted">Total Feedings Today</span><br><br>
+            </div>
+            <div class="col-6 col-sm-3 placeholder">
+              <i class="fa fa-hourglass-3 fa-5x"></i><br><br>
+              <h4>Ounces</h4>
+              <span class="text-muted">Total Ounces Today</span>
+            </div>
+            <div class="col-6 col-sm-3 placeholder">
+              <i class="fa fa-bed fa-5x"></i><br><br>
+              <h4>Nap Times</h4>
+              <span class="text-muted">Total Nap Time Today</span>
+            </div>
+            <div class="col-6 col-sm-3 placeholder">
+              <i class="fa fa-bathtub  fa-5x"></i><br><br>
+              <h4>Diapers</h4>
+              <span class="text-muted">Total Diapers Today</span>
+            </div>
+          </section> -->
+					<!-- /OVERVIEW -->
+         <hr>
+        <h3>Form</h3>
+
+        <form id="Babyform">
+          <span id="alertMe"></span>
+            <div class="form-group">
+<!-- FOOD DATE -->
+              <label for="feedDate"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Food Date:</label>
+                
+                <input type="text" class="form-control datepicker" id="feedDate">
+                
+            </div>
+            <div class="form-group">
+<!-- FOOD TIME -->
+              <label for="feedTime"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Food Time:</label>
+              <div class="input-group">
+
+                <select name="feedTime" id="feedTime" class="form-control">
+                  <option value="">-- Select Time --</option>
+                  <option value="12:00">12:00</option>
+                  <option value="12:30">12:30</option>
+                  <option value="1:00">1:00</option>
+                  <option value="1:30">1:30</option>
+                  <option value="2:00">2:00</option>
+                  <option value="2:30">2:30</option>
+                  <option value="3:00">3:00</option>
+                  <option value="3:30">3:30</option>
+                  <option value="4:00">4:00</option>
+                  <option value="4:30">4:30</option>
+                  <option value="5:00">5:00</option>
+                  <option value="5:30">5:30</option>
+                  <option value="6:00">6:00</option>
+                  <option value="6:30">6:30</option>
+                  <option value="7:00">7:00</option>
+                  <option value="7:30">7:30</option>
+                  <option value="8:00">8:00</option>
+                  <option value="8:30">8:30</option>
+                  <option value="9:00">9:00</option>
+                  <option value="9:30">9:30</option>
+                  <option value="10:00">10:00</option>
+                  <option value="10:30">10:30</option>
+                  <option value="11:00">11:00</option>
+                  <option value="11:30">11:30</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="food">How Much Food?</label>
+
+              <select id="food" class="form-control">
+                <option value="">-- Select Amount --</option>
+                <option value=".5 oz">.5 oz</option>
+                <option value="1 oz">1 oz</option>
+                <option value="1.5 oz">1.5 oz</option>
+                <option value="2 oz">2 oz</option>
+                <option value="2.5 oz">2.5 oz</option>
+                <option value="3 oz">3 oz</option>
+                <option value="3.5 oz">3.5 oz</option>
+                <option value="4 oz">4 oz</option>
+                <option value="4.5 oz">4.5 oz</option>
+                <option value="5 oz">5 oz</option>
+                <option value="5.5 oz">5.5 oz</option>
+                <option value="6 oz">6 oz</option>
+                <option value="6.5 oz">6.5 oz</option>
+                <option value="7 oz">7 oz</option>
+                <option value="7.5 oz">7.5 oz</option>
+                <option value="8 oz">8 oz</option>                
+              </select>
+            </div>
+
+
+<!-- DIAPER -->
+            <div class="form-group">
+              <label for="stool">Diaper</label>
+              <select name="stool" id="stool" class="form-control">
+                <option value="">-- Select One --</option>
+                <option value="wet">Wet</option>
+                <option value="poop">Poop</option>
+                <option value="both">Both</option>
+              </select>
+            </div>
+
+<!-- NAP TIME -->
+            <div class="form-group">
+              <label for="nap"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Nap Time:</label>
+              <div class="input-group clockpicker">
+                <input type="text" id="nap" class="form-control">
+              </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" id="mins" type="checkbox" value="minutes">
+                    Minutes
+                  </label>
+                  <label class="form-check-label">
+                    <input class="form-check-input" id="hrs" type="checkbox" value="hours">
+                    Hours
+                  </label>
+                </div>
+            </div>
+
+<!-- NAP LENGTH -->
+            <div class="form-group">
+              <label for="napTime">Nap Length</label>
+              <select name="napTime" id="napTime" class="form-control">
+                <option value="">-- Select One --</option>
+                <option value="10 mins">10 mins</option>
+                <option value="20 mins">20 mins</option>
+                <option value="30 mins">30 mins</option>
+                <option value="40 mins">40 mins</option>
+                <option value="1 hour">1 hour</option>
+                <option value="2 hours">2 hours</option>
+                <option value="3 hours">3 hours</option>
+                <option value="4 hours">4 hours</option>
+              </select>
+            </div>
+
+
+
+<!-- COMMENTS -->
+            <div class="form-group">
+              <label for="comments">Comments</label>
+              <textarea name="comments" id="comments" class="form-control" cols="30" rows="10"></textarea>
+            </div>
+            
+            
+            <button type="submit" id="saveBtn" class="btn btn-outline-primary btn-block">Submit</button>
+
+           
+         </form>
+          <br><br>
+        </main>
+      </div>
+    </div>
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>	
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

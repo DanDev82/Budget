@@ -1,0 +1,29 @@
+:root {
+  --green-bg-color: #28A745;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.fa .fa-area-chart {
+  color: var(--green-bg-color);
+}
+
+.page-item.active .page-link {
+  background-color: var(--green-bg-color);
+  border-color: var(--green-bg-color);
+}
+
+.page-link {
+  color: var(--green-bg-color);
+}
+
+.page-link:hover{
+  color: #4f4f4f;
+}
+
+
+@media(min-width: 768px) {
+
+}
